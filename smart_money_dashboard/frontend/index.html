@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Smart Money Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="https://unpkg.com/lightweight-charts@4.2.1/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Smart Money Dashboard</h1>
+            <p>Institutional style market structure and liquidity engine</p>
+        </header>
+
+        <main class="app-main">
+            <section class="left-panel">
+                <div class="card">
+                    <h2>Data Source</h2>
+                    <p>Upload your own OHLCV CSV or use the sample XAUUSD data.</p>
+                    <div class="upload-row">
+                        <input type="file" id="csvFile" accept=".csv" />
+                        <button id="uploadBtn">Analyze File</button>
+                    </div>
+                    <button id="sampleBtn" class="secondary">Use Sample Data</button>
+                    <div id="status" class="status"></div>
+                </div>
+
+                <div class="card">
+                    <h2>Bias Summary</h2>
+                    <div id="biasSummary" class="bias-summary">
+                        <p>No analysis yet</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Premium Discount</h2>
+                    <div id="premiumBox">
+                        <div class="pd-bar">
+                            <div id="pdFill" class="pd-fill"></div>
+                        </div>
+                        <div id="pdLabel" class="pd-label"></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Structure and Liquidity</h2>
+                    <div id="details" class="details"></div>
+                </div>
+            </section>
+
+            <section class="right-panel">
+                <div class="card chart-card">
+                    <h2>Price and Smart Money Layers</h2>
+                    <div id="chart" class="chart-container"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
